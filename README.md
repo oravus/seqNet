@@ -1,2 +1,2 @@
 # seqNet
-To be release soon
+To be released soon
