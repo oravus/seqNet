@@ -1,9 +1,12 @@
-# seqNet
+# SeqNet: Sequence-based Hierarchical Place Recognition
 Code to be released soon.
 
 The arXiv pre-print can found [here](https://arxiv.org/abs/2102.11603) along with the supplementary material.
 
-
+<p align="center">
+  <img src="seqnet.jpg">
+    <br/><em>Sequence-Based Hierarchical Visual Place Recognition.</em>
+</p>
 
 ### Citation
 ```
