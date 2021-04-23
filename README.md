@@ -1,7 +1,7 @@
 # SeqNet: Sequence-based Hierarchical Place Recognition
-Code to be released soon.
+Code to be released by end of May.
 
-The arXiv pre-print can found [here](https://arxiv.org/abs/2102.11603) along with the supplementary material.
+[[arXiv pre-print with supplementary material](https://arxiv.org/abs/2102.11603)] [[IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/9382076/)]
 
 <p align="center">
   <img src="seqnet.jpg">
@@ -12,12 +12,13 @@ The arXiv pre-print can found [here](https://arxiv.org/abs/2102.11603) along wit
 ```
 @article{garg2021seqnet,
   title={SeqNet: Learning Descriptors for Sequence-based Hierarchical Place Recognition},
-  author={Sourav Garg and Michael Milford},
+  author={Garg, Sourav and Milford, Michael},
   journal={IEEE Robotics and Automation Letters (in press)},
-  volume={},
-  number={},
-  pages={},
+  volume={6},
+  number={3},
+  pages={4305-4312},
   year={2021},
-  publisher={IEEE}
+  publisher={IEEE},
+  doi={10.1109/LRA.2021.3067633}
 }
 ```
