@@ -1,4 +1,4 @@
-# SeqNet: Sequence-based Hierarchical Place Recognition
+# SeqNet: Learning Descriptors for Sequence-Based Hierarchical Place Recognition
 
 [[arXiv pre-print with supplementary material](https://arxiv.org/abs/2102.11603)] [[IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/9382076/)]
 
