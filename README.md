@@ -4,7 +4,7 @@ Code to be released by end of May.
 [[arXiv pre-print with supplementary material](https://arxiv.org/abs/2102.11603)] [[IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/9382076/)]
 
 <p align="center">
-  <img src="seqnet.jpg">
+  <img src="./assets/seqnet.jpg">
     <br/><em>Sequence-Based Hierarchical Visual Place Recognition.</em>
 </p>
 
