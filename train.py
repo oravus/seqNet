@@ -44,7 +44,7 @@ def train(opt, model, encoder_dim, device, dataset, criterion, optimizer, train_
                     collate_fn=dataset.collate_fn, pin_memory=not opt.nocuda)
 
         print('Allocated:', torch.cuda.memory_allocated())
-        print('Cached:', torch.cuda.memory_cached())
+        print('Cached:', torch.cuda.memory_reserved())
 
         model.train()
         for iteration, (query, positives, negatives, 
