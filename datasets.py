@@ -374,7 +374,7 @@ class QueryDatasetFromStruct(data.Dataset):
             negSample = np.unique(np.concatenate([self.negCache[index], negSample]))
             negSample = np.sort(negSample) #essential to order ascending, speeds up h5 by about double
 
-            negFeat = h5feat[negSample.tolist()]
+            negFeat = h5feat[negSample.astype(int).tolist()]
             if self.use_faiss:
                 faiss_index = faiss.IndexFlatL2(posFeat.shape[1])
                 # noinspection PyArgumentList
