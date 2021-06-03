@@ -75,14 +75,10 @@ The code in this repository is based on [Nanne/pytorch-NetVlad](https://github.c
 ```
 
 #### Other Related Projects
-[Patch-NetVLAD (2021)](https://github.com/QVPR/Patch-NetVLAD)
-
-[Delta Descriptors (2020)](https://github.com/oravus/DeltaDescriptors)
-
-[CoarseHash (2020)](https://github.com/oravus/CoarseHash)
-
-[seq2single (2019)](https://github.com/oravus/seq2single)
-
+[Patch-NetVLAD (2021)](https://github.com/QVPR/Patch-NetVLAD);
+[Delta Descriptors (2020)](https://github.com/oravus/DeltaDescriptors);
+[CoarseHash (2020)](https://github.com/oravus/CoarseHash);
+[seq2single (2019)](https://github.com/oravus/seq2single);
 [LoST (2018)](https://github.com/oravus/lostX)
 
 <a name="nordclean">[a]<a> This is the clean version of the dataset that excludes images from the tunnels and red lights, exact image names can be obtained from [here](https://github.com/QVPR/Patch-NetVLAD/blob/main/patchnetvlad/dataset_imagenames/nordland_imageNames_index.txt).
