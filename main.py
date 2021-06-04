@@ -123,12 +123,12 @@ if __name__ == "__main__":
     model, optimizer, scheduler, criterion = get_model(opt, encoder_dim, device)
 
     unique_string = datetime.now().strftime('%b%d_%H-%M-%S')+'_l'+str(opt.seqL)+'_'+ opt.expName
-    writer = SummaryWriter(log_dir=join(opt.runsPath,unique_string))
+    writer = None
 
     if opt.mode.lower() == 'test':
         print('===> Running evaluation step')
         epoch = 1
-        recallsOrDesc, dbEmb, qEmb, rAtL, preds = test(opt, model, encoder_dim, device, whole_test_set, writer, epoch, write_tboard=False, extract_noEval=opt.extractOnly)
+        recallsOrDesc, dbEmb, qEmb, rAtL, preds = test(opt, model, encoder_dim, device, whole_test_set, writer, epoch, extract_noEval=opt.extractOnly)
         if opt.resultsPath is not None:
             if not exists(opt.resultsPath):
                 makedirs(opt.resultsPath)
@@ -141,6 +141,7 @@ if __name__ == "__main__":
 
     elif opt.mode.lower() == 'train':
         print('===> Training model')
+        writer = SummaryWriter(log_dir=join(opt.runsPath,unique_string))
         train_set.cache = join(opt.cachePath, train_set.whichSet + '_feat_cache_{}.hdf5'.format(unique_string))
         if not exists(opt.cachePath):
             makedirs(opt.cachePath)
@@ -164,7 +165,7 @@ if __name__ == "__main__":
             if opt.optim.upper() == 'SGD':
                 scheduler.step(epoch)
             if (epoch % opt.evalEvery) == 0:
-                recalls = test(opt, model, encoder_dim, device, whole_test_set, writer, epoch, write_tboard=True)[0]
+                recalls = test(opt, model, encoder_dim, device, whole_test_set, writer, epoch)[0]
                 is_best = recalls[5] > best_score 
                 if is_best:
                     not_improved = 0

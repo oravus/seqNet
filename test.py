@@ -44,7 +44,7 @@ def getRecallAtN(n_values, predictions, gt):
                 break
     return correct_at_n / (len(gt)-numQWithoutGt)
 
-def test(opt, model, encoder_dim, device, eval_set, writer, epoch=0, write_tboard=False, extract_noEval=False):
+def test(opt, model, encoder_dim, device, eval_set, writer, epoch=0, extract_noEval=False):
     # TODO what if features dont fit in memory? 
     test_data_loader = DataLoader(dataset=eval_set, 
                 num_workers=opt.threads, batch_size=opt.cacheBatchSize, shuffle=False, 
@@ -92,7 +92,7 @@ def test(opt, model, encoder_dim, device, eval_set, writer, epoch=0, write_tboar
     dbFeat_np = dbFeat.detach().cpu().numpy().astype('float32')
 
     db_emb, q_emb = None, None
-    if opt.numSamples2Project != -1 and not write_tboard:
+    if opt.numSamples2Project != -1 and writer is not None:
         db_emb = TSNE(n_components=2).fit_transform(dbFeat_np[:opt.numSamples2Project])
         q_emb = TSNE(n_components=2).fit_transform(qFeat_np[:opt.numSamples2Project])
 
@@ -141,6 +141,6 @@ def test(opt, model, encoder_dim, device, eval_set, writer, epoch=0, write_tboar
     for i,n in enumerate(n_values):
         recalls[n] = recall_at_n[i]
         print("====> Recall@{}: {:.4f}".format(n, recall_at_n[i]))
-        if write_tboard: writer.add_scalar('Val/Recall@' + str(n), recall_at_n[i], epoch)
+        if writer is not None: writer.add_scalar('Val/Recall@' + str(n), recall_at_n[i], epoch)
 
     return recalls, db_emb, q_emb, rAtL, predictions
