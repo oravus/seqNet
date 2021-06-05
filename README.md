@@ -1,6 +1,6 @@
 # SeqNet: Learning Descriptors for Sequence-Based Hierarchical Place Recognition
 
-[[ArXiv+Supplementary](https://arxiv.org/abs/2102.11603)] [[IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/9382076/)] [[ICRA Youtube Video](https://www.youtube.com/watch?v=KYw7RhDfxY0)]
+[[ArXiv+Supplementary](https://arxiv.org/abs/2102.11603)] [[IEEE Xplore RA-L 2021](https://ieeexplore.ieee.org/abstract/document/9382076/)] [[ICRA 2021 YouTube Video](https://www.youtube.com/watch?v=KYw7RhDfxY0)]
 
 <p align="center">
   <img src="./assets/seqnet.jpg">
