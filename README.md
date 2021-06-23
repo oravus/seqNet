@@ -2,10 +2,21 @@
 
 [[ArXiv+Supplementary](https://arxiv.org/abs/2102.11603)] [[IEEE Xplore RA-L 2021](https://ieeexplore.ieee.org/abstract/document/9382076/)] [[ICRA 2021 YouTube Video](https://www.youtube.com/watch?v=KYw7RhDfxY0)]
 
+**and**
+
+# SeqNetVLAD vs PointNetVLAD: Image Sequence vs 3D Point Clouds for Day-Night Place Recognition
+
+[[ArXiv](https://arxiv.org/abs/2106.11481)] [[CVPR 2021 Workshop 3DVR](https://sites.google.com/view/cvpr2021-3d-vision-robotics/)]
+
 <p align="center">
   <img src="./assets/seqnet.jpg">
     <br/><em>Sequence-Based Hierarchical Visual Place Recognition.</em>
 </p>
+
+## News:
+**Jun 23**: CVPR 2021 Workshop 3DVR paper, "SeqNetVLAD vs PointNetVLAD", now available on [arXiv](https://arxiv.org/abs/2106.11481). Oxford dataset to be released soon.
+
+**Jun 02**: SeqNet code release with the Nordland dataset.
 
 ## Setup (One time)
 ### Conda
