@@ -87,13 +87,21 @@ The code in this repository is based on [Nanne/pytorch-NetVlad](https://github.c
 @article{garg2021seqnet,
   title={SeqNet: Learning Descriptors for Sequence-based Hierarchical Place Recognition},
   author={Garg, Sourav and Milford, Michael},
-  journal={IEEE Robotics and Automation Letters (in press)},
+  journal={IEEE Robotics and Automation Letters},
   volume={6},
   number={3},
   pages={4305-4312},
   year={2021},
   publisher={IEEE},
   doi={10.1109/LRA.2021.3067633}
+}
+
+@misc{garg2021seqnetvlad,
+  title={SeqNetVLAD vs PointNetVLAD: Image Sequence vs 3D Point Clouds for Day-Night Place Recognition},
+  author={Garg, Sourav and Milford, Michael},
+  howpublished={CVPR 2021 Workshop on 3D Vision and Robotics (3DVR)},
+  month={Jun},
+  year={2021},
 }
 ```
 
