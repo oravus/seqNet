@@ -38,7 +38,7 @@ To train sequential descriptors through SeqNet on the Nordland dataset:
 ```python
 python main.py --mode train --pooling seqnet --dataset nordland-sw --seqL 10 --w 5 --outDims 4096 --expName "w5"
 ```
-or the Oxford dataset:
+or the Oxford dataset (set `--dataset oxford-pnv` for pointnetvlad-like data split as described in the [CVPR 2021 Workshop paper](https://arxiv.org/abs/2106.11481)):
 ```python
 python main.py --mode train --pooling seqnet --dataset oxford-v1.0 --seqL 5 --w 3 --outDims 4096 --expName "w3"
 ```
