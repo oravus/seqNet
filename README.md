@@ -14,7 +14,9 @@
 </p>
 
 ## News:
-**Jun 23**: CVPR 2021 Workshop 3DVR paper, "SeqNetVLAD vs PointNetVLAD", now available on [arXiv](https://arxiv.org/abs/2106.11481). Oxford dataset to be released soon.
+**Aug 03** : Added Oxford dataset files and a [direct link](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT) to download the Nordland dataset.
+
+**Jun 23**: CVPR 2021 Workshop 3DVR paper, "SeqNetVLAD vs PointNetVLAD", now available on [arXiv](https://arxiv.org/abs/2106.11481).
 
 **Jun 02**: SeqNet code release with the Nordland dataset.
 
@@ -27,17 +29,21 @@ mamba install numpy pytorch=1.8.0 torchvision tqdm scikit-learn faiss tensorboar
 ```
 
 ### Download
-Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and corresponding model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>.
+Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB), and Nordland-trained model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>.
 
 ## Run
 
 ### Train
-To train sequential descriptors through SeqNet:
+To train sequential descriptors through SeqNet on the Nordland dataset:
 ```python
 python main.py --mode train --pooling seqnet --dataset nordland-sw --seqL 10 --w 5 --outDims 4096 --expName "w5"
 ```
+or the Oxford dataset:
+```python
+python main.py --mode train --pooling seqnet --dataset oxford-v1.0 --seqL 5 --w 3 --outDims 4096 --expName "w3"
+```
 
-To (re-)train single descriptors through SeqNet:
+To train transformed single descriptors through SeqNet:
 ```python
 python main.py --mode train --pooling seqnet --dataset nordland-sw --seqL 1 --w 1 --outDims 4096 --expName "w1"
 ```
@@ -49,7 +55,7 @@ python main.py --mode test --pooling seqnet --dataset nordland-sf --seqL 5 --spl
 The above will reproduce results for SeqNet (S5) as per [Supp. Table III on Page 10](https://arxiv.org/pdf/2102.11603.pdf).
 
 <details>
-  <summary>To obtain other results from the same table, expand this. </summary>
+  <summary>To obtain other results from the same table in the paper, expand this. </summary>
   
 ```python
 # Raw Single (NetVLAD) Descriptor
@@ -112,6 +118,6 @@ The code in this repository is based on [Nanne/pytorch-NetVlad](https://github.c
 [seq2single (2019)](https://github.com/oravus/seq2single);
 [LoST (2018)](https://github.com/oravus/lostX)
 
-<a name="nordclean">[a]<a> This is the clean version of the dataset that excludes images from the tunnels and red lights, exact image names can be obtained from [here](https://github.com/QVPR/Patch-NetVLAD/blob/main/patchnetvlad/dataset_imagenames/nordland_imageNames_index.txt).
+<a name="nordclean">[a]<a> This is the clean version of the dataset that excludes images from the tunnels and red lights and can be downloaded from [here](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT).
 
 <a name="saveLoc">[b]<a> These will automatically save to `./data/`, you can modify this path in [download.sh](https://github.com/oravus/seqNet/blob/main/download.sh) and [get_datasets.py](https://github.com/oravus/seqNet/blob/5450829c4294fe1d14966bfa1ac9b7c93237369b/get_datasets.py#L6) to specify your workdir.
