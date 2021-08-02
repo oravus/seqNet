@@ -26,7 +26,11 @@ def get_dataset(opt):
         ref, qry = '2015-03-17-11-08-44', '2014-12-16-18-44-24'
         structStr = "{}_{}_{}".format(opt.dataset,ref,qry)
         # note: for now temporarily use ox_test as ox_val
-        dataset = Dataset(opt.dataset, structStr+'_train_d-20_d2-5.db', structStr+'_test_d-10_d2-5.db', structStr+'_test_d-10_d2-5.db', opt)  # train, test, val structs
+        if 'v1.0' in opt.dataset:
+            testStr = '_test_d-25_d2-5.db'
+        elif 'pnv' in opt.dataset:
+            testStr = '_test_d-25_d2-5.db'
+        dataset = Dataset(opt.dataset, structStr+'_train_d-20_d2-5.db', structStr+testStr, structStr+testStr, opt)  # train, test, val structs
         ft1 = np.load(join(prefix_data,"descData/{}/oxford_{}_stereo_left.npy".format(opt.descType,ref)))
         ft2 = np.load(join(prefix_data,"descData/{}/oxford_{}_stereo_left.npy".format(opt.descType,qry)))
         splitInds = np.load("./structFiles/{}_splitInds.npz".format(opt.dataset), allow_pickle=True)
