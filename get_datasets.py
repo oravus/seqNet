@@ -22,6 +22,20 @@ def get_dataset(opt):
         dataset.testInds = [testInds, testInds]
         encoder_dim = dataset.loadPreComputedDescriptors(ft1,ft2)
 
+    elif 'oxford' in opt.dataset.lower():
+        ref, qry = '2015-03-17-11-08-44', '2014-12-16-18-44-24'
+        structStr = "{}_{}_{}".format(opt.dataset,ref,qry)
+        # note: for now temporarily use ox_test as ox_val
+        dataset = Dataset(opt.dataset, structStr+'_train_d-20_d2-5.db', structStr+'_test_d-10_d2-5.db', structStr+'_test_d-10_d2-5.db', opt)  # train, test, val structs
+        ft1 = np.load(join(prefix_data,"descData/{}/oxford_{}_stereo_left.npy".format(opt.descType,ref)))
+        ft2 = np.load(join(prefix_data,"descData/{}/oxford_{}_stereo_left.npy".format(opt.descType,qry)))
+        splitInds = np.load("./structFiles/{}_splitInds.npz".format(opt.dataset), allow_pickle=True)
+
+        dataset.trainInds = splitInds['trainInds'].tolist()
+        dataset.valInds = splitInds['valInds'].tolist()
+        dataset.testInds = splitInds['testInds'].tolist()
+        encoder_dim = dataset.loadPreComputedDescriptors(ft1,ft2)
+
     else:
         raise Exception('Unknown dataset')
 
