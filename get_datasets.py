@@ -27,7 +27,7 @@ def get_dataset(opt):
         structStr = "{}_{}_{}".format(opt.dataset,ref,qry)
         # note: for now temporarily use ox_test as ox_val
         if 'v1.0' in opt.dataset:
-            testStr = '_test_d-25_d2-5.db'
+            testStr = '_test_d-10_d2-5.db'
         elif 'pnv' in opt.dataset:
             testStr = '_test_d-25_d2-5.db'
         dataset = Dataset(opt.dataset, structStr+'_train_d-20_d2-5.db', structStr+testStr, structStr+testStr, opt)  # train, test, val structs
