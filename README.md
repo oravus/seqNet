@@ -20,12 +20,17 @@
 
 **Jun 02**: SeqNet code release with the Nordland dataset.
 
-## Setup (One time)
+## Setup
 ### Conda
 ```bash
 conda create -n seqnet python=3.8 mamba -c conda-forge -y
 conda activate seqnet
 mamba install numpy pytorch=1.8.0 torchvision tqdm scikit-learn faiss tensorboardx h5py -c conda-forge -y
+```
+If the above instructions fail (possibly for an older Ubuntu version < 20.04), use the following instead:
+
+```bash
+conda create -n seqnet_test numpy pytorch=1.8.0 torchvision tqdm scikit-learn faiss tensorboardx h5py -c pytorch -c conda-forge
 ```
 
 ### Download
