@@ -14,6 +14,8 @@
 </p>
 
 ## News:
+**Oct 13** : Oxford & Brisbane Day-Night pretrained models [download link](https://cloudstor.aarnet.edu.au/plus/s/wx0zIGi3WBTtq5F).
+
 **Aug 03** : Added Oxford dataset files and a [direct link](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT) to download the Nordland dataset.
 
 **Jun 23**: CVPR 2021 Workshop 3DVR paper, "SeqNetVLAD vs PointNetVLAD", now available on [arXiv](https://arxiv.org/abs/2106.11481).
@@ -27,7 +29,7 @@ conda create -n seqnet numpy pytorch=1.8.0 torchvision tqdm scikit-learn faiss t
 ```
 
 ### Download
-Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB), and Nordland-trained model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>.
+Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB), and Nordland-trained model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>. Other pre-trained models for Oxford and Brisbane Day-Night can be downloaded from [here](https://cloudstor.aarnet.edu.au/plus/s/wx0zIGi3WBTtq5F).
 
 ## Run
 
