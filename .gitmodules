@@ -1,0 +1,3 @@
+[submodule "thirdparty/Patch-NetVLAD"]
+	path = thirdparty/Patch-NetVLAD
+	url = https://github.com/oravus/Patch-NetVLAD.git
