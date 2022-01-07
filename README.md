@@ -55,7 +55,7 @@ python main.py --mode test --pooling seqnet --dataset nordland-sf --seqL 5 --spl
 The above will reproduce results for SeqNet (S5) as per [Supp. Table III on Page 10](https://arxiv.org/pdf/2102.11603.pdf).
 
 <details>
-  <summary>To obtain other results from the same table in the paper, expand this. </summary>
+  <summary> [Expand this] To obtain other results from the same table in the paper, expand this. </summary>
   
 ```python
 # Raw Single (NetVLAD) Descriptor
@@ -112,6 +112,7 @@ The code in this repository is based on [Nanne/pytorch-NetVlad](https://github.c
 ```
 
 #### Other Related Projects
+[SeqMatchNet 2021](https://github.com/oravus/SeqMatchNet);
 [Patch-NetVLAD (2021)](https://github.com/QVPR/Patch-NetVLAD);
 [Delta Descriptors (2020)](https://github.com/oravus/DeltaDescriptors);
 [CoarseHash (2020)](https://github.com/oravus/CoarseHash);
