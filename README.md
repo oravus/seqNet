@@ -112,7 +112,7 @@ The code in this repository is based on [Nanne/pytorch-NetVlad](https://github.c
 ```
 
 #### Other Related Projects
-[SeqMatchNet 2021](https://github.com/oravus/SeqMatchNet);
+[SeqMatchNet (2021)](https://github.com/oravus/SeqMatchNet);
 [Patch-NetVLAD (2021)](https://github.com/QVPR/Patch-NetVLAD);
 [Delta Descriptors (2020)](https://github.com/oravus/DeltaDescriptors);
 [CoarseHash (2020)](https://github.com/oravus/CoarseHash);
