@@ -214,7 +214,7 @@ def save_db_struct(path, db_struct):
     savemat(path, {'dbStruct': inner_dict})
 
 def print_db_concise(db):
-	[print('\033[1m' + k + '\033[0m', v[:10] if type(v) is list else v) for k,v in db._asdict().items()]
+    [print('\033[1m' + k + '\033[0m', v[:10] if type(v) is list else v) for k,v in db._asdict().items()]
 
 class WholeDatasetFromStruct(data.Dataset):
     def __init__(self, structFile, indsSplit, dbDescs, qDescs, onlyDB=False, seqL=1, seqBounds=None,seqL_filterData=None):
