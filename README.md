@@ -42,6 +42,10 @@ or the Oxford dataset (set `--dataset oxford-pnv` for pointnetvlad-like data spl
 ```python
 python main.py --mode train --pooling seqnet --dataset oxford-v1.0 --seqL 5 --w 3 --outDims 4096 --expName "w3"
 ```
+or the MSLS dataset (must specify `--msls_trainCity` and `--msls_valCity`):
+```python
+python main.py --mode train --pooling seqnet --dataset msls --msls_trainCity melbourne --msls_valCity austin --seqL 5 --w 3 --outDims 4096 --expName "msls_w5"
+```
 
 To train transformed single descriptors through SeqNet:
 ```python
@@ -49,9 +53,15 @@ python main.py --mode train --pooling seqnet --dataset nordland-sw --seqL 1 --w 
 ```
 
 ### Test
+On the Nordland dataset:
 ```python
 python main.py --mode test --pooling seqnet --dataset nordland-sf --seqL 5 --split test --resume ./data/runs/Jun03_15-22-44_l10_w5/ 
 ```
+On the MSLS dataset:
+```python
+python main.py --mode test --pooling seqnet --dataset msls --msls_trainCity melbourne --msls_valCity austin --seqL 5 --split test --resume ./data/runs/<modelName>/
+```
+
 The above will reproduce results for SeqNet (S5) as per [Supp. Table III on Page 10](https://arxiv.org/pdf/2102.11603.pdf).
 
 <details>
@@ -101,6 +111,9 @@ wget -O pitts_orig_WPCA4096.pth.tar https://cloudstor.aarnet.edu.au/plus/s/gJZvo
 # Compute global descriptors
 cd ../../../Patch-NetVLAD/
 python feature_extract.py --config_path patchnetvlad/configs/seqnet.ini --dataset_file_path ../../structFiles/imageNamesFiles/oxford_2014-12-16-18-44-24_imagenames_subsampled-2m.txt --dataset_root_dir <PATH_TO_OXFORD_IMAGE_DIR> --output_features_fullpath ../../data/descData/netvlad-pytorch/oxford_2014-12-16-18-44-24_stereo_left.npy
+
+# example for MSLS (replace 'database' with 'query' and use different city names to compute all)
+python feature_extract.py --config_path patchnetvlad/configs/seqnet.ini --dataset_file_path ../../structFiles/imageNamesFiles/msls_melbourne_database_imageNames.txt --dataset_root_dir <PATH_TO_Mapillary_Street_Level_Sequences> --output_features_fullpath ../../data/descData/netvlad-pytorch/msls_melbourne_database.npy
 ```
 </details>
   
