@@ -42,9 +42,9 @@ or the Oxford dataset (set `--dataset oxford-pnv` for pointnetvlad-like data spl
 ```python
 python main.py --mode train --pooling seqnet --dataset oxford-v1.0 --seqL 5 --w 3 --outDims 4096 --expName "w3"
 ```
-or the MSLS dataset (must specify `--msls_trainCity` and `--msls_valCity`):
+or the MSLS dataset (specifying `--msls_trainCity` and `--msls_valCity` as default values):
 ```python
-python main.py --mode train --pooling seqnet --dataset msls --msls_trainCity melbourne --msls_valCity austin --seqL 5 --w 3 --outDims 4096 --expName "msls_w5"
+python main.py --mode train --pooling seqnet --dataset msls --msls_trainCity melbourne --msls_valCity austin --seqL 5 --w 3 --outDims 4096 --expName "msls_w3"
 ```
 
 To train transformed single descriptors through SeqNet:
@@ -57,9 +57,9 @@ On the Nordland dataset:
 ```python
 python main.py --mode test --pooling seqnet --dataset nordland-sf --seqL 5 --split test --resume ./data/runs/Jun03_15-22-44_l10_w5/ 
 ```
-On the MSLS dataset:
+On the MSLS dataset (can change `--msls_valCity` to `melbourne` or `austin` too):
 ```python
-python main.py --mode test --pooling seqnet --dataset msls --msls_trainCity melbourne --msls_valCity austin --seqL 5 --split test --resume ./data/runs/<modelName>/
+python main.py --mode test --pooling seqnet --dataset msls --msls_valCity amman --seqL 5 --split test --resume ./data/runs/<modelName>/
 ```
 
 The above will reproduce results for SeqNet (S5) as per [Supp. Table III on Page 10](https://arxiv.org/pdf/2102.11603.pdf).
