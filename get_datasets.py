@@ -2,6 +2,7 @@ from datasets import Dataset
 from torch.utils.data import DataLoader, SubsetRandomSampler
 import numpy as np
 from os.path import join
+from itertools import product
 
 prefix_data = "./data/"
 
@@ -39,6 +40,27 @@ def get_dataset(opt):
         dataset.valInds = splitInds['valInds'].tolist()
         dataset.testInds = splitInds['testInds'].tolist()
         encoder_dim = dataset.loadPreComputedDescriptors(ft1,ft2)
+
+    elif 'msls' in opt.dataset.lower():
+        def get_msls_modImgNames(names):
+            return ["/".join(n.split("/")[8:]) for n in names]
+        trav1, trav2 = 'database', 'query'
+        trainCity, valCity = opt.msls_trainCity, opt.msls_valCity
+        dbFileName_train = f'msls_{trainCity}_d-20_d2-5.db'
+        dbFileName_val = f'msls_{valCity}_d-20_d2-5.db'
+        dataset = Dataset('msls', dbFileName_train, dbFileName_val, dbFileName_val, opt)  # train, test, val structs
+        ftReadPath = join(prefix_data,"descData/{}/msls_{}_{}.npy")
+        seqBounds_all, ft_all = [], []
+        for splitCity, trav in product([trainCity, valCity],[trav1, trav2]):
+            seqBounds_all.append(np.loadtxt(f"./structFiles/seqBoundsFiles/msls_{splitCity}_{trav}_seqBounds.txt",int))
+            ft_all.append(np.load(ftReadPath.format(opt.descType,splitCity,trav)))
+        ft_train_ref, ft_train_qry, ft_val_ref, ft_val_qry = ft_all
+        sb_train_ref, sb_train_qry, sb_val_ref, sb_val_qry = seqBounds_all
+        dataset.trainInds = [np.arange(ft_train_ref.shape[0]),np.arange(ft_train_qry.shape[0])] # append ref & qry
+        dataset.valInds = [ft_train_ref.shape[0]+np.arange(ft_val_ref.shape[0]),ft_train_qry.shape[0]+np.arange(ft_val_qry.shape[0])] # shift val by train count
+        dataset.testInds = dataset.valInds
+        encoder_dim = dataset.loadPreComputedDescriptors(np.vstack([ft_train_ref,ft_val_ref]), np.vstack([ft_train_qry,ft_val_qry]), \
+            [np.vstack([sb_train_ref,sb_val_ref]),np.vstack([sb_train_qry,sb_val_qry])])
 
     else:
         raise Exception('Unknown dataset')
