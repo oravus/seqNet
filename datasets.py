@@ -57,12 +57,16 @@ class Dataset():
     def get_whole_val_set(self):
         structFile = join(self.struct_dir, self.val_mat_file)
         indsSplit = self.valInds
+        if self.seqL_filterData is None and self.dataset_name == 'msls':
+            self.seqL_filterData = self.seqL
         return WholeDatasetFromStruct(structFile, indsSplit, self.dbDescs, self.qDescs, seqL=self.seqL, seqBounds=[self.db_seqBounds,self.q_seqBounds],seqL_filterData=self.seqL_filterData)
 
     def get_whole_test_set(self):
         if self.test_mat_file is not None:
             structFile = join(self.struct_dir, self.test_mat_file)
             indsSplit = self.testInds
+            if self.seqL_filterData is None and self.dataset_name == 'msls':
+                self.seqL_filterData = self.seqL
             return WholeDatasetFromStruct(structFile, indsSplit, self.dbDescs, self.qDescs, seqL=self.seqL, seqBounds=[self.db_seqBounds,self.q_seqBounds],seqL_filterData=self.seqL_filterData)
         else:
             raise ValueError('test set not available for dataset ' + self.dataset_name)
