@@ -56,7 +56,9 @@ parser.add_argument('--predictionsFile', type=str, default=None, help='path to p
 parser.add_argument('--seqL_filterData', type=int, help='during testing, db and qry inds will be removed that violate sequence boundaries for this given sequence length')
 
 # dataset, model etc.
-parser.add_argument('--dataset', type=str, default='nordland-sw', help='Dataset to use', choices=['nordland-sw', 'nordland-sf', 'oxford-v1.0', 'oxford-pnv'])
+parser.add_argument('--dataset', type=str, default='nordland-sw', help='Dataset to use', choices=['nordland-sw', 'nordland-sf', 'oxford-v1.0', 'oxford-pnv', 'msls'])
+parser.add_argument('--msls_trainCity', type=str, default='melbourne', help='trainCityName')
+parser.add_argument('--msls_valCity', type=str, default='austin', help='valCityName')
 parser.add_argument('--pooling', type=str, default='seqnet', help='type of pooling to use', choices=[ 'seqnet', 'smooth', 'delta', 'single','single+seqmatch', 's1+seqmatch'])
 parser.add_argument('--seqL', type=int, default=5, help='Sequence Length')
 parser.add_argument('--w', type=int, default=3, help='filter size for seqNet')
