@@ -14,13 +14,15 @@
 </p>
 
 ## News:
-**Oct 13** : Oxford & Brisbane Day-Night pretrained models [download link](https://cloudstor.aarnet.edu.au/plus/s/wx0zIGi3WBTtq5F).
+**Jan 18, 2022** : MSLS training setup included.
 
-**Aug 03** : Added Oxford dataset files and a [direct link](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT) to download the Nordland dataset.
+**Jan 07, 2022** : Single Image Vanilla NetVLAD feature extraction enabled.
 
-**Jun 23**: CVPR 2021 Workshop 3DVR paper, "SeqNetVLAD vs PointNetVLAD", now available on [arXiv](https://arxiv.org/abs/2106.11481).
+**Oct 13, 2021** : Oxford & Brisbane Day-Night pretrained models [download link](https://cloudstor.aarnet.edu.au/plus/s/wx0zIGi3WBTtq5F).
 
-**Jun 02**: SeqNet code release with the Nordland dataset.
+**Aug 03, 2021** : Added Oxford dataset files and a [direct link](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT) to download the Nordland dataset.
+
+**Jun 23, 2021**: CVPR 2021 Workshop 3DVR paper, "SeqNetVLAD vs PointNetVLAD", now available on [arXiv](https://arxiv.org/abs/2106.11481).
 
 ## Setup
 ### Conda
