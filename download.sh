@@ -1,5 +1,7 @@
-# Please download nordland-clean dataset [EDIT 27 Jan 2024: directly download from here: https://universityofadelaide.box.com/s/zkfk1akpbo5318fzqmtvlpp7030ex4up ]
-# Please download trained models [EDIT 27 Jan 2024: directly download from here: https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk]
+# EDIT: 27 Jan 2024
+# Please download nordland-clean dataset from here: https://universityofadelaide.box.com/s/zkfk1akpbo5318fzqmtvlpp7030ex4up
+# Please download nordland/oxford precomputed descriptors from here: https://universityofadelaide.box.com/s/p8uh5yncsaxk7g8lwr8pihnwkqbc2pkf
+# Please download trained models from here: https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk
 
 # download nordland-clean dataset
 #wget -cO - https://cloudstor.aarnet.edu.au/plus/s/PK98pDvLAesL1aL/download > nordland-clean.zip
