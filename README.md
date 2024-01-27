@@ -14,7 +14,7 @@
 </p>
 
 ## News:
-**Jan 27, 2024** : Download all pretrained models from [here](https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk) and Nordland dataset from [here](https://universityofadelaide.box.com/s/zkfk1akpbo5318fzqmtvlpp7030ex4up)
+**Jan 27, 2024** : Download all pretrained models from [here](https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk), Nordland dataset from [here](https://universityofadelaide.box.com/s/zkfk1akpbo5318fzqmtvlpp7030ex4up) and precomputed descriptors from [here](https://universityofadelaide.box.com/s/p8uh5yncsaxk7g8lwr8pihnwkqbc2pkf)
 
 **Jan 18, 2022** : MSLS training setup included.
 
@@ -33,7 +33,7 @@ conda create -n seqnet numpy pytorch=1.8.0 torchvision tqdm scikit-learn faiss t
 ```
 
 ### Download
-Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB), and Nordland-trained model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>. Other pre-trained models for Oxford and Brisbane Day-Night can be downloaded from [here](https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk).
+~~Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB), and Nordland-trained model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>. Other pre-trained models for Oxford and Brisbane Day-Night can be downloaded from [here](https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk).~~ [Please see download links at the top news from 27 Jan 2024]
 
 ## Run
 
