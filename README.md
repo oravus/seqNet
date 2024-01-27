@@ -14,13 +14,15 @@
 </p>
 
 ## News:
+**Jan 27, 2024** : Download all pretrained models from [here](https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk) and Nordland dataset from [here](https://universityofadelaide.box.com/s/zkfk1akpbo5318fzqmtvlpp7030ex4up)
+
 **Jan 18, 2022** : MSLS training setup included.
 
 **Jan 07, 2022** : Single Image Vanilla NetVLAD feature extraction enabled.
 
-**Oct 13, 2021** : Oxford & Brisbane Day-Night pretrained models [download link](https://cloudstor.aarnet.edu.au/plus/s/wx0zIGi3WBTtq5F).
+**Oct 13, 2021** : ~~Oxford & Brisbane Day-Night pretrained models [download link](https://cloudstor.aarnet.edu.au/plus/s/wx0zIGi3WBTtq5F).~~ (use the latest link provided above)
 
-**Aug 03, 2021** : Added Oxford dataset files and a [direct link](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT) to download the Nordland dataset.
+**Aug 03, 2021** : Added Oxford dataset files ~~and a [direct link](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT) to download the Nordland dataset.~~ (use the latest link provided above)
 
 **Jun 23, 2021**: CVPR 2021 Workshop 3DVR paper, "SeqNetVLAD vs PointNetVLAD", now available on [arXiv](https://arxiv.org/abs/2106.11481).
 
@@ -31,7 +33,7 @@ conda create -n seqnet numpy pytorch=1.8.0 torchvision tqdm scikit-learn faiss t
 ```
 
 ### Download
-Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB), and Nordland-trained model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>. Other pre-trained models for Oxford and Brisbane Day-Night can be downloaded from [here](https://cloudstor.aarnet.edu.au/plus/s/wx0zIGi3WBTtq5F).
+Run `bash download.sh` to download single image NetVLAD descriptors (3.4 GB) for the Nordland-clean dataset <sup>[[a]](#nordclean)</sup> and the Oxford dataset (0.3 GB), and Nordland-trained model files (1.5 GB) <sup>[[b]](#saveLoc)</sup>. Other pre-trained models for Oxford and Brisbane Day-Night can be downloaded from [here](https://universityofadelaide.box.com/s/mp45yapl0j0by6aijf5kj8obt8ky0swk).
 
 ## Run
 
