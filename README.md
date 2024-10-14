@@ -110,7 +110,7 @@ git submodule update --init
 
 # Download NetVLAD+PCA model
 cd thirdparty/Patch-NetVLAD/patchnetvlad/pretrained_models
-wget -O pitts_orig_WPCA4096.pth.tar https://cloudstor.aarnet.edu.au/plus/s/gJZvogRj4FUUQMy/download
+wget -O pitts_orig_WPCA4096.pth.tar https://huggingface.co/TobiasRobotics/Patch-NetVLAD/resolve/main/pitts_WPCA4096.pth.tar?download=true
 
 # Compute global descriptors
 cd ../../../Patch-NetVLAD/
@@ -155,6 +155,6 @@ The code in this repository is based on [Nanne/pytorch-NetVlad](https://github.c
 [seq2single (2019)](https://github.com/oravus/seq2single);
 [LoST (2018)](https://github.com/oravus/lostX)
 
-<a name="nordclean">[a]<a> This is the clean version of the dataset that excludes images from the tunnels and red lights and can be downloaded from [here](https://cloudstor.aarnet.edu.au/plus/s/8L7loyTZjK0FsWT).
+<a name="nordclean">[a]<a> This is the clean version of the dataset that excludes images from the tunnels and red lights and can be downloaded from [here](https://universityofadelaide.app.box.com/s/zkfk1akpbo5318fzqmtvlpp7030ex4up).
 
 <a name="saveLoc">[b]<a> These will automatically save to `./data/`, you can modify this path in [download.sh](https://github.com/oravus/seqNet/blob/main/download.sh) and [get_datasets.py](https://github.com/oravus/seqNet/blob/5450829c4294fe1d14966bfa1ac9b7c93237369b/get_datasets.py#L6) to specify your workdir.
